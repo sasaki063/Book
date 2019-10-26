@@ -16,4 +16,14 @@ class BookController extends Controller
     {
       return view('book.store');
     }
+
+    public function create(Request $request)
+    {
+     $book = new Book;
+     $book->title = $request->title;
+     $book->text = $request->text;
+
+     $book->save();
+     return redirect('/book');
+    }
 }
