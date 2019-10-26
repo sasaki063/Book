@@ -11,4 +11,9 @@ class BookController extends Controller
       $items = Book::all();
       return view('book.index', ['items' => $items]);
     }
+
+    public function store(Request $request)
+    {
+      return view('book.store');
+    }
 }
