@@ -12,17 +12,20 @@
   <form action="/book/store" method="post">
   {{ csrf_field() }}
     <tr>
-      <td>title:
+      <td>タイトル</td>
+      <td>
         <input type="text" name="title" value="{{old('title')}}">
       </td>
-
+    </tr>
+    <tr>
+      <td>紹介文</td>
       <td>
-        text:<input type="text" name="text" value="{{old('text')}}">
+        <input type="text" name="text" value="{{old('text')}}">
       </td>
+    </tr>
       <td>
         <input type="submit" value="send">
       </td>
-    </tr>
   </form>
 </table>
 
