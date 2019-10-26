@@ -8,7 +8,7 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
-      $item = Book:all();
-      return view('book.index')
+      // $item = Book:all();
+      return view('book.index');
     }
 }
