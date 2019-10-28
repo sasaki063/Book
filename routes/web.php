@@ -14,6 +14,9 @@
 Route::get('/', function () {return view('welcome');});
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/book', 'BookController@index');
-Route::get('/book/store', 'BookController@store');
-Route::post('/book/store', 'BookController@create');
+
+Route::prefix('book')->group(function(){
+    Route::get('/', 'BookController@index');
+    Route::get('store', 'BookController@store');
+    Route::post('store', 'BookController@create');
+});
