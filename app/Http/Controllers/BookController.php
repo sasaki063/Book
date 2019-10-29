@@ -32,4 +32,14 @@ class BookController extends Controller
       $book = Book::find($request->id);
       return view('book.edit', ['form' => $book]);
     }
+
+    public function update(Request $request)
+    {
+      $book = Book::find($request->id);
+      $book->title = $request->title;
+      $book->text = $request->text;
+
+      $book->save();
+      return redirect('/book');
+    }
 }

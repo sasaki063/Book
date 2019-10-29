@@ -11,16 +11,17 @@
    <table>
    <form action="/book/edit" method="post">
        {{ csrf_field() }}
+       <input type="hidden" name="id" value="{{$form->id}}">
        <tr>
          <th>タイトル</th>
          <td>
-           <input type="text" name="title"value="{{$form->title}}">
+           <input type="text" name="title" value="{{$form->title}}">
          </td>
        </tr>
        <tr>
          <th>紹介文</th>
          <td>
-           <input type="text" name="text"value="{{$form->text}}">
+           <input type="text" name="text" value="{{$form->text}}">
          </td>
        </tr>
        <tr>
