@@ -9,28 +9,24 @@
        </ul>
    @endif
    <table>
-   <form action="/book/edit" method="post">
-       {{ csrf_field() }}
-       <input type="hidden" name="id" value="{{$form->id}}">
+     <form action="/book/edit" method="post">
+     {{ csrf_field() }}
+     <input type="hidden" name="id" value="{{$form->id}}">
        <tr>
-         <th>タイトル</th>
+         <td>タイトル</td>
          <td>
            <input type="text" name="title" value="{{$form->title}}">
          </td>
        </tr>
        <tr>
-         <th>紹介文</th>
+         <td>紹介文</td>
          <td>
            <input type="text" name="text" value="{{$form->text}}">
          </td>
        </tr>
-       <tr>
-         <th>
-         </th>
          <td>
            <input type="submit" value="send">
          </td>
-       </tr>
-   </form>
+     </form>
    </table>
 @endsection
