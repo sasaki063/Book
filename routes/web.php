@@ -19,4 +19,5 @@ Route::prefix('book')->group(function(){
     Route::get('/', 'BookController@index');
     Route::get('store', 'BookController@store');
     Route::post('store', 'BookController@create');
+    Route::get('edit', 'BookController@edit');
 });

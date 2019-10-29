@@ -26,4 +26,10 @@ class BookController extends Controller
      $book->save();
      return redirect('/book');
     }
+
+    public function edit(Request $request)
+    {
+      $book = Book::find($request->id);
+      return view('book.edit', ['form' => $book]);
+    }
 }
