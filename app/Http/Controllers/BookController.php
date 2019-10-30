@@ -19,7 +19,11 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-        //
+      $book = new Book;
+      $book->title = $request->title;
+      $book->text = $request->text;
+      $book->save();
+      return redirect('book');
     }
 
     public function show($id)
