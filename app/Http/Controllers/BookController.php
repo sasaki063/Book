@@ -14,7 +14,7 @@ class BookController extends Controller
 
     public function create()
     {
-        //
+      return view('book.create');
     }
 
     public function store(Request $request)
