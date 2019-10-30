@@ -36,9 +36,12 @@ class BookController extends Controller
       return view('book.edit', ['book' => $book]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Book $book)
     {
-        //
+        $book->title = $request->title;
+        $book->text = $request->text;
+        $book->save();
+        return redirect('book');
     }
 
     public function destroy($id)

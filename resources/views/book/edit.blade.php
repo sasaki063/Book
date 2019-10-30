@@ -11,7 +11,7 @@
    <table>
      <form action="{{ url('book/'.$book->id) }}" method="post">
      {{ csrf_field() }}
-     <input type="hidden" name="id" value="{{$book->id}}">
+     {{ method_field('PUT') }}
        <tr>
          <td>タイトル</td>
          <td>
