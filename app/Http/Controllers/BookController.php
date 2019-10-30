@@ -31,9 +31,9 @@ class BookController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Book $book)
     {
-        //
+      return view('book.edit', ['book' => $book]);
     }
 
     public function update(Request $request, $id)

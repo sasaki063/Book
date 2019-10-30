@@ -9,19 +9,19 @@
        </ul>
    @endif
    <table>
-     <form action="/book/edit" method="post">
+     <form action="{{ url('book/'.$book->id) }}" method="post">
      {{ csrf_field() }}
-     <input type="hidden" name="id" value="{{$form->id}}">
+     <input type="hidden" name="id" value="{{$book->id}}">
        <tr>
          <td>タイトル</td>
          <td>
-           <input type="text" name="title" value="{{$form->title}}">
+           <input type="text" name="title" value="{{$book->title}}">
          </td>
        </tr>
        <tr>
          <td>紹介文</td>
          <td>
-           <input type="text" name="text" value="{{$form->text}}">
+           <input type="text" name="text" value="{{$book->text}}">
          </td>
        </tr>
          <td>
