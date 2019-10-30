@@ -1,45 +1,43 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Book;
+
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-      $items = Book::all();
-      return view('book.index', ['items' => $items]);
+        //
+    }
+
+    public function create()
+    {
+        //
     }
 
     public function store(Request $request)
     {
-      return view('book.store');
+        //
     }
 
-    public function create(Request $request)
+    public function show($id)
     {
-     $book = new Book;
-     $book->title = $request->title;
-     $book->text = $request->text;
-
-     $book->save();
-     return redirect('/book');
+        //
     }
 
-    public function edit(Request $request)
+    public function edit($id)
     {
-      $book = Book::find($request->id);
-      return view('book.edit', ['form' => $book]);
+        //
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-      $book = Book::find($request->id);
-      $book->title = $request->title;
-      $book->text = $request->text;
+        //
+    }
 
-      $book->save();
-      return redirect('/book');
+    public function destroy($id)
+    {
+        //
     }
 }
