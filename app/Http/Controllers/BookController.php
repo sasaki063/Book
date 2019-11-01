@@ -26,9 +26,9 @@ class BookController extends Controller
       return redirect('book');
     }
 
-    public function show($id)
+    public function show(Book $book)
     {
-        //
+      return view('book.show', ['book' => $book]);
     }
 
     public function edit(Book $book)
