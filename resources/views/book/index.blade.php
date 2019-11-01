@@ -8,7 +8,9 @@
     </thead>
       @foreach ($items as $item)
        <tr>
-        <td>{{ $item -> title }}</td>
+        <td>
+          <a href="{{ url('book/'.$item->id) }}">{{ $item -> title }}</a>
+        </td>
         <td>{{ $item -> text }}</td>
         <td>
           <form action="{{ url('book/'.$item->id) }}" method="post">
