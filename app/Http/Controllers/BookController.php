@@ -6,24 +6,46 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
       $items = Book::all();
       return view('book.index', ['items' => $items]);
     }
 
-    public function store(Request $request)
+    public function create()
     {
-      return view('book.store');
+      return view('book.create');
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
-     $book = new Book;
-     $book->title = $request->title;
-     $book->text = $request->text;
+      $book = new Book;
+      $book->title = $request->title;
+      $book->text = $request->text;
+      $book->save();
+      return redirect('book');
+    }
 
-     $book->save();
-     return redirect('/book');
+    public function show($id)
+    {
+        //
+    }
+
+    public function edit(Book $book)
+    {
+      return view('book.edit', ['book' => $book]);
+    }
+
+    public function update(Request $request, Book $book)
+    {
+        $book->title = $request->title;
+        $book->text = $request->text;
+        $book->save();
+        return redirect('book');
+    }
+
+    public function destroy($id)
+    {
+        //
     }
 }

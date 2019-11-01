@@ -9,7 +9,7 @@
     </ul>
 @endif
 <table>
-  <form action="/book/store" method="post">
+  <form action="{{ url('book') }}" method="post">
   {{ csrf_field() }}
     <tr>
       <td>タイトル</td>
