@@ -24,4 +24,12 @@ class CommentsController extends Controller
 
       return redirect()->route('book.show', ['book' => $book]);
     }
+
+    public function destroy(Comment $comment)
+    {
+      $book = $comment->book_id;
+      $comment->delete();
+      
+      return redirect()->route('book.show', ['book' => $book]);
+    }
 }
