@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
+<a href= "{{ route('book.create') }}">投稿</a>
+
   <table>
     <thead>
       <th>タイトル</th>
