@@ -71,6 +71,7 @@
                 </div>
             </div>
         </nav>
+        <a href="{{ url('book') }}">投稿一覧</a>
 
         <main class="py-4">
             @yield('content')
