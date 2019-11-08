@@ -11,8 +11,13 @@ class Book extends Model
        'text',
    ];
 
+   public function user()
+    {
+      return $this->belongsTo('App\User');
+    }
+
    public function comments()
-   {
-       return $this->hasMany('App\Comment');
-   }
+    {
+      return $this->hasMany('App\Comment');
+    }
 }
