@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use App\Comment;
+use Auth;
 
 class CommentsController extends Controller
 {
@@ -20,6 +21,7 @@ class CommentsController extends Controller
       $comment = new Comment;
       $comment->book_id = $request->book_id;
       $comment->body = $request->body;
+      $comment->user_id = Auth::id();
       $comment->save();
 
       return redirect()->route('book.show', ['book' => $book]);
@@ -29,7 +31,7 @@ class CommentsController extends Controller
     {
       $book = $comment->book_id;
       $comment->delete();
-      
+
       return redirect()->route('book.show', ['book' => $book]);
     }
 }
