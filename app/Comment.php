@@ -10,8 +10,14 @@ class Comment extends Model
       'body',
   ];
 
+  public function user()
+  {
+    return $this->belongsTo('App\User');
+  }
+
   public function book()
   {
       return $this->belongsTo('App\Book');
   }
+
 }
