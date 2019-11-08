@@ -25,6 +25,7 @@
     <tr>
       <td>{{ $item -> id }}</td>
       <td>{{ $item -> body }}</td>
+      <td>{{ $item -> user_id }}</td>
       <td>
         <form action="{{ url('comments/'.$item->id) }}" method="post">
         {{ csrf_field() }}
