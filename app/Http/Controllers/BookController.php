@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Book;
 use Illuminate\Http\Request;
+use App\Book;
+use Auth;
 
 class BookController extends Controller
 {
@@ -22,6 +23,7 @@ class BookController extends Controller
       $book = new Book;
       $book->title = $request->title;
       $book->text = $request->text;
+      $book->user_id = Auth::id();
       $book->save();
       return redirect('book');
     }
@@ -44,9 +46,12 @@ class BookController extends Controller
         return redirect('book');
     }
 
-    public function destroy(Book $book)
+    public function destroy($id)
     {
+      $book = Book::find($id);
+      $book->comments()->delete();
       $book->delete();
+
       return redirect('book');
     }
 }
